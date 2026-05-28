@@ -1,22 +1,8 @@
 [builder]
-builder = "nixpacks"
-
-[phases.setup]
-nixPkgs = ["python311", "glib"]
-
-[phases.install]
-cmds = [
-  "python3.11 -m venv /app/.venv",
-  "/app/.venv/bin/pip install --no-cache-dir --upgrade pip",
-  "/app/.venv/bin/pip install --no-cache-dir -r requirements.txt",
-  "/app/.venv/bin/pip install --no-cache-dir opencv-python-headless==4.8.1.78 --force-reinstall"
-]
-
-[phases.start]
-cmd = "/app/.venv/bin/python bot.py"
+builder = "dockerfile"
 
 [variables]
-BOT_TOKEN = "31frEYJewGyScDtQNDAcg5NbiDbMSvtUrNKiHBR2qvzY"
+BOT_TOKEN = "8847685464:AAFX6gUncOkuFK1zPyex4UJT7EJSRajALtc"
 
 [healthcheck]
 path = "/"
