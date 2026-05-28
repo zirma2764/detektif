@@ -16,7 +16,7 @@ cmds = [
 cmd = "/app/.venv/bin/python bot.py"
 
 [variables]
-BOT_TOKEN = ""
+BOT_TOKEN = "31frEYJewGyScDtQNDAcg5NbiDbMSvtUrNKiHBR2qvzY"
 
 [healthcheck]
 path = "/"
