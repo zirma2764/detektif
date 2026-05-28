@@ -6,12 +6,14 @@ nixPkgs = ["python311", "glib"]
 
 [phases.install]
 cmds = [
-  "pip install --no-cache-dir -r requirements.txt",
-  "pip install --no-cache-dir opencv-python-headless==4.8.1.78 --force-reinstall"
+  "python3.11 -m venv /app/.venv",
+  "/app/.venv/bin/pip install --no-cache-dir --upgrade pip",
+  "/app/.venv/bin/pip install --no-cache-dir -r requirements.txt",
+  "/app/.venv/bin/pip install --no-cache-dir opencv-python-headless==4.8.1.78 --force-reinstall"
 ]
 
 [phases.start]
-cmd = "python bot.py"
+cmd = "/app/.venv/bin/python bot.py"
 
 [variables]
 BOT_TOKEN = ""
