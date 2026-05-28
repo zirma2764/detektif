@@ -1,0 +1,21 @@
+[builder]
+builder = "nixpacks"
+
+[phases.setup]
+nixPkgs = ["python311", "glib"]
+
+[phases.install]
+cmds = [
+  "pip install --no-cache-dir -r requirements.txt",
+  "pip install --no-cache-dir opencv-python-headless==4.8.1.78 --force-reinstall"
+]
+
+[phases.start]
+cmd = "python bot.py"
+
+[variables]
+BOT_TOKEN = ""
+
+[healthcheck]
+path = "/"
+port = 8080
